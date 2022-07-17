@@ -37,7 +37,7 @@ h1 {
   padding: 1rem;
   border-radius: 10px;
   gap: 0.5rem;
-  margin: 0 1rem;
+  /* margin: 0 1px; */
 }
 
 input {
@@ -45,7 +45,7 @@ input {
   background: none;
   border-radius: 7px;
   outline: none;
-  padding: 0 0.8rem;
+  padding: 0 0.4rem;
   font-weight: 700;
 }
 
@@ -91,4 +91,14 @@ input[type='number'] {
 }
 .pink label {
   color: var(--pink);
+}
+
+@media (max-width: 490px) {
+  input {
+    width: 35vw;
+    font-size: 5vh;
+  }
+  label {
+    font-size: 6vw;
+  }
 }
