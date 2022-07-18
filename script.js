@@ -44,7 +44,7 @@ let suhu = function (type) {
   } else if (type == kelvin) {
     toCelcius = parseFloat(type.value) - 273.15
     toReamur = ((parseFloat(type.value) - 273.15) * 4) / 5
-    toFahrenheit = ((parseFloat(type.value) - 273.15) * 4) / 5 + 32
+    toFahrenheit = ((parseFloat(type.value) - 273.15) * 9) / 5 + 32
 
     printReamur()
     printFahrenheit()
