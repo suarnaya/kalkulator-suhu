@@ -3,7 +3,7 @@ const fahrenheit = document.getElementById('fahrenheit')
 const kelvin = document.getElementById('kelvin')
 const reamur = document.getElementById('reamur')
 
-let suhu = function (type) {
+let suhu = (type) => {
   let toReamur,
     toCelcius,
     toKelvin,
@@ -15,7 +15,7 @@ let suhu = function (type) {
     (fahrenheit.value = parseFloat(toFahrenheit.toFixed(2)))
   printKelvin = () => (kelvin.value = parseFloat(toKelvin.toFixed(2)))
 
-  if (type == celcius) {
+  if (type === celcius) {
     toFahrenheit = (parseFloat(type.value) * 9) / 5 + 32
     toReamur = (parseFloat(type.value) / 5) * 4
     toKelvin = parseFloat(type.value) + 273.15
@@ -23,7 +23,7 @@ let suhu = function (type) {
     printKelvin()
     printFahrenheit()
     //////
-  } else if (type == fahrenheit) {
+  } else if (type === fahrenheit) {
     toCelcius = ((parseFloat(type.value) - 32) * 5) / 9
     toKelvin = ((parseFloat(type.value) - 32) * 5) / 9 + 273.15
     toReamur = ((parseFloat(type.value) - 32) * 4) / 9
@@ -32,7 +32,7 @@ let suhu = function (type) {
     printKelvin()
     printCelcius()
     //////
-  } else if (type == reamur) {
+  } else if (type === reamur) {
     toFahrenheit = (parseFloat(type.value) * 9) / 4 + 32
     toCelcius = (parseFloat(type.value) * 5) / 4
     toKelvin = (parseFloat(type.value) * 5) / 4 + 273.15
@@ -41,7 +41,7 @@ let suhu = function (type) {
     printFahrenheit()
     printCelcius()
     //////
-  } else if (type == kelvin) {
+  } else if (type === kelvin) {
     toCelcius = parseFloat(type.value) - 273.15
     toReamur = ((parseFloat(type.value) - 273.15) * 4) / 5
     toFahrenheit = ((parseFloat(type.value) - 273.15) * 9) / 5 + 32
@@ -52,15 +52,10 @@ let suhu = function (type) {
   }
 }
 
-celcius.oninput = () => {
-  suhu(celcius)
-}
-fahrenheit.oninput = () => {
-  suhu(fahrenheit)
-}
-reamur.oninput = () => {
-  suhu(reamur)
-}
-kelvin.oninput = () => {
-  suhu(kelvin)
-}
+celcius.oninput = () => suhu(celcius)
+
+fahrenheit.oninput = () => suhu(fahrenheit)
+
+reamur.oninput = () => suhu(reamur)
+
+kelvin.oninput = () =>suhu(kelvin)
